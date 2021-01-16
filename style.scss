@@ -1,0 +1,163 @@
+$mainTextColor: #E8E8E8;
+$navBg: #252525;
+$notActiveColor: #4D4D4D;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+
+    a {
+        text-decoration: none;
+    }
+
+    outline: 0;
+
+}
+
+body {
+    position: relative;
+}
+
+#mainHeader {
+    background-color: $navBg;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.158);
+    height: 90px;
+    width: 100%;
+
+    .left {
+        #title {
+            font-weight: 900;
+        }
+
+        width: 50%;
+        height: 100%;
+        color: $mainTextColor;
+        padding-left: 40px;
+        display: flex;
+        align-items: center;
+
+        nav {
+            ul {
+                list-style: none;
+                margin-left: 50px;
+
+                li {
+                    display: inline;
+                    font-size: 14px;
+                    font-weight: 500;
+                    margin: 0 15px;
+
+                    a {
+                        color: $notActiveColor;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+#sideNav {
+    width: 60px;
+    height: 100vh;
+    background-color: $navBg;
+    display: inline;
+    position: fixed;
+    bottom: 0;
+    z-index: -1;
+
+    ul {
+        padding-top: 90px;
+        text-align: center;
+
+        li {
+            padding-top: 25px;
+
+            a {
+                span {
+                    color: $notActiveColor;
+                }
+            }
+        }
+
+    }
+}
+
+.active {
+    color: $mainTextColor !important;
+}
+
+main {
+    width: calc(100% - 60px);
+    height: auto;
+    background-color: #1A1A1A;
+    float: right;
+
+    #content {
+        padding: 0 90px 60px;
+
+        #contentHeader {
+            padding: 50px 20px;
+
+            h5 {
+                color: $notActiveColor;
+            }
+
+            h1 {
+                font-weight: 300;
+                font-size: 35px;
+                margin-top: 20px;
+                color: $mainTextColor;
+            }
+        }
+
+        #cardContainer {
+            display: flex;
+            justify-content: space-between;
+
+            .card {
+                width: 30%;
+                height: 600px;
+                border-radius: 10px;
+                background-color: $navBg;
+
+                .cardTop {
+                    width: 100%;
+                    height: 90px;
+                    padding: 0 25px;
+                    border-bottom: 2px solid rgba(128, 128, 128, 0.158);
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    h4 {
+                        color: $mainTextColor;
+                        font-weight: 300;
+                        display: inline;
+                    }
+
+                    .addTaskBtn {
+                        background-color: transparent;
+                        border: 1px solid $notActiveColor;
+                        border-radius: 3px;
+                        padding: 12px 15px;
+                        font-size: 11px;
+                        font-weight: bold;
+                        color: $notActiveColor;
+                        transition: 0.5s ease;
+
+
+                        &:hover {
+                            color: $mainTextColor;
+                            border: 1px solid $mainTextColor;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
